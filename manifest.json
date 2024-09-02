@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Google Colab Free GPU Monitor",
+  "version": "1.0",
+  "description": "Monitor GPU availability on Google Colab for free users.",
+  "permissions": ["activeTab", "scripting", "notifications"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/ELT Logo 16x16.jpg",
+      "48": "images/ELT Logo 48x48.jpeg",
+      "128": "images/ELT Logo 128x128.jpeg"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "images/ELT Logo 16x16.jpg",
+    "48": "images/ELT Logo 48x48.jpeg",
+    "128": "images/ELT Logo 128x128.jpeg"
+  },
+  "host_permissions": [
+    "*://colab.research.google.com/*"
+  ],
+  "content_scripts": [
+    {
+        "matches": ["*://colab.research.google.com/*"],
+        "js": ["content.js"]
+    }
+  ]
+}

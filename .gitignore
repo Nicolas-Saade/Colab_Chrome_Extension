@@ -1,0 +1,5 @@
+.DS_Store
+.env
+../Collab-Extension.crx
+../Collab-Extension.pem
+config.js

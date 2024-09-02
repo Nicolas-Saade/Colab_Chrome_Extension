@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 18px;
+  }
+  
+  #status {
+    margin: 10px 0;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  #alternativeList {
+    margin-top: 10px;
+  }
+  
