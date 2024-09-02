@@ -1,8 +1,8 @@
-# Google Colab GPU Availability Checker Chrome Extension
+# Google Colab TPU Availability Checker Chrome Extension
 
 ## Overview
 
-This Chrome extension automates the process of checking GPU availability on Google Colab. It interacts with the Google Colab interface to check the availability of a T4 GPU and automatically clicks the "Connect" button if available. This extension leverages the concepts of DOM and nested Shadow DOM, navigation and JavaScript.
+This Chrome extension automates the process of checking TPU availability on Google Colab. It interacts with the Google Colab interface to check the availability of a T4 TPU and automatically clicks the "Connect" button if available. This extension leverages the concepts of DOM and nested Shadow DOM, navigation and JavaScript.
 
 ## Technologies and Concepts Used - Google Chrome Extension Development:
 
@@ -23,7 +23,7 @@ Implemented logic to handle extension events like clicking the extension button 
 
 ### Google Cloud Functions:
 
-Used to handle email notifications when a GPU is available or unavailable.
+Used to handle email notifications when a TPU is available or unavailable.
 
 #### Technologies and Concepts Used:
 - **Node.js 20**: Runtime used in cloud function code.
