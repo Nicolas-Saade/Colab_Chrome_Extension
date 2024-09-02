@@ -1,4 +1,3 @@
-console.log("Popup script is running.");
 document.addEventListener('DOMContentLoaded', () => {
   const sendEmailButton = document.getElementById('sendEmailButton');
   const confirmEmailButton = document.getElementById('confirmEmailButton');
@@ -19,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       confirmedEmailAddress = emailAddress; // Store the confirmed email address
-      alert(`Email address confirmed: ${confirmedEmailAddress}`);
-      console.log(`Confirmed email address: ${confirmedEmailAddress}`);
-    });
+      alert(`Email address confirmed: ${confirmedEmailAddress}`);    });
   } else {
     console.error('Button with id "confirmEmailButton" not found.');
   }
@@ -38,20 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Send the confirmed email address to the background script
       chrome.runtime.sendMessage({ type: 'SEND_EMAIL_TO_CONTENT', email: confirmedEmailAddress });
-      console.log(`Captured email address: ${confirmedEmailAddress}`);
 
       // Execute the content script in the current active tab
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.scripting.executeScript({
           target: { tabId: tabs[0].id },
           files: ['content.js']
-        }, () => {
-          // Optional: Call a function in content.js if needed
-          chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            function: checkGpuAvailability // Example function, modify if necessary
-          });
-        });
+        }, () => {});
       });
     });
   } else {
